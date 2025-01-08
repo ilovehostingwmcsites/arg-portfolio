@@ -3,40 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CLASSIFIED WMC FINAL 2025</title>
+  <title>Welcome</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="lockscreen">
-    <h1>WELCOME TO {CLASSIFIED_WMC_FINAL_2025}</h1>
-    <img src="lock.png" alt="Lock Icon" id="lock-image">
-    <h2>PLEASE VERIFY YOUR IDENTITY.</h2>
-    <input 
-      type="text" 
-      id="password" 
-      placeholder="Check your guidebook!" 
-    />
-    <button onclick="verifyPassword()">Submit</button>
-    <p id="error-message"></p>
+
+  <h1>WELCOME TO {CLASSIFIED_WMC_FINAL_2025}</h1>
+  <img src="lock.png" alt="Lock Image" id="lock-image">
+  <h2>PLEASE VERIFY YOUR IDENTITY.</h2>
+
+  <div id="password-section">
+    <input type="text" id="password" placeholder="Check your guidebook!">
+    <button onclick="checkPassword()">Submit</button>
+    <div id="error-message"></div>
   </div>
 
-  <div id="sidebar" class="hidden">
-    <button id="hamburger" onclick="toggleMenu()">☰</button>
-    <ul>
-      <li><a href="puzzle/July22.html">Where it all started. July 2022.</a></li>
-      <li><a href="puzzle/September24.html">September 2024</a></li>
-      <li><a href="puzzle/OctoberAndNovember24.html">October and November of 2024</a></li>
-      <li><a href="puzzle/DecemberAndJanuary245.html">December and January of 2024 and 2025</a></li>
-      <li><a href="puzzle/Final.html">Final Thoughts.</a></li>
-      <!-- Add more links as needed -->
-    </ul>
+  <!-- Hidden by default, this will appear once the user has completed the first puzzle -->
+  <div id="second-puzzle-link" style="display:none;">
+    <p>You've completed the first puzzle! Go ahead and try the <a href="puzzle2.html">Second Puzzle</a>.</p>
   </div>
-<!-- Message that will show after password is entered -->
-<div id="instruction-message" style="display: none;">
-  <p>Please click on the first date in the sidebar to begin.</p>
-</div>
 
-  <script src="script.js"></script>
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('password').value;
+      const correctPassword = 'password'; // Replace this with actual password
+
+      const errorMessage = document.getElementById('error-message');
+
+      // Check if the entered password is correct
+      if (input === correctPassword) {
+        // Show the sidebar link for the second puzzle
+        localStorage.setItem('firstPuzzleCompleted', 'true');
+        document.getElementById('second-puzzle-link').style.display = 'block';  // Show second puzzle link
+        // Hide the password section
+        document.getElementById('password-section').style.display = 'none';
+      } else {
+        // Show error message
+        errorMessage.textContent = 'Incorrect password. Please try again.';
+        errorMessage.style.color = 'red';
+      }
+    }
+
+    // Check if the first puzzle has been completed
+    window.onload = function() {
+      if (localStorage.getItem('firstPuzzleCompleted') === 'true') {
+        document.getElementById('second-puzzle-link').style.display = 'block';  // Show second puzzle link
+      }
+    }
+  </script>
+
 </body>
 </html>
