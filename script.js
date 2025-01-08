@@ -1,6 +1,6 @@
 function verifyPassword() {
   const input = document.getElementById('password').value;
-  const correctPassword = 'correctpassword'; // Replace with your actual password
+  const correctPassword = 'correctpassword'; // replace this later cuh
   const errorMessage = document.getElementById('error-message');
   const sidebar = document.getElementById('sidebar');
   const hamburger = document.getElementById('hamburger');
@@ -12,10 +12,10 @@ function verifyPassword() {
     hamburger.style.display = 'none'; // Hide the hamburger icon
     instructionMessage.style.display = 'block'; // Show the instruction message
 
-    // Optionally, highlight the first date link in the sidebar
-    const firstDateLink = sidebar.querySelector('a'); // Assuming the first link is the first <a> tag
-    firstDateLink.style.backgroundColor = '#4CAF50'; // Change background color to highlight
-    firstDateLink.style.color = 'white'; // Make text color white for contrast
+    // highlight the first date link in the sidebar
+    const firstDateLink = sidebar.querySelector('a'); // assuming the first link is the first <a> tag -- bit hacky but yknow it works LOL
+    firstDateLink.style.backgroundColor = '#4CAF50'; // high lighter
+    firstDateLink.style.color = 'white'; // return of the white text
   } else {
     errorMessage.textContent = 'Incorrect password. Please try again.';
     errorMessage.style.color = 'red';
@@ -26,7 +26,7 @@ function toggleMenu() {
   const sidebar = document.getElementById('sidebar');
   const hamburger = document.getElementById('hamburger');
   
-  // Toggle the visibility of the sidebar and the hamburger icon
+  // make burger and sidebar invis or nah
   sidebar.classList.toggle('visible');
   if (sidebar.classList.contains('visible')) {
     hamburger.style.display = 'none'; // Hide hamburger icon when sidebar is visible
@@ -37,13 +37,13 @@ function toggleMenu() {
 
 function checkPassword() {
   const input = document.getElementById('password').value;
-  const correctPassword = 'password'; // Replace this with the actual password
+  const correctPassword = 'password'; // MAKE IT REAAAALLLLL LAAATERRRRRR
 
   const errorMessage = document.getElementById('error-message');
 
-  // Check if the entered password is correct
+  // is the july2022 password real?
   if (input === correctPassword) {
-    // Show the two portfolio images
+    // wmc port 
     document.body.innerHTML = `
       <h1>Well done! You've solved the puzzle.</h1>
       <img src="WMCPortfolio1.png" alt="Portfolio 1">
