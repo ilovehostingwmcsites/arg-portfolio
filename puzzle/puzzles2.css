@@ -5,27 +5,33 @@ body {
   text-align: center;
 }
 
-#puzzle-container {
-  display: grid;
-  grid-template-columns: repeat(3, 100px); /* Change this to control the number of pieces */
-  grid-template-rows: repeat(3, 100px);
-  gap: 5px;
-  justify-content: center;
+#riddle-container {
   margin-top: 20px;
 }
 
-.piece {
-  width: 100px;
-  height: 100px;
-  background-color: #ccc;
-  border: 1px solid #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  border: none;
 }
 
-#result-container {
+button:hover {
+  background-color: #555;
+}
+
+#error-message {
+  color: red;
+}
+
+#next-clue {
   margin-top: 20px;
-  display: none;
 }
