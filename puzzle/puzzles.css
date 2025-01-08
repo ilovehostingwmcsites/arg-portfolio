@@ -8,9 +8,10 @@ body {
   justify-content: center;
   height: 100vh;
   background-color: #121212; 
-  color: #ffffff;
+  color: #ffffff; 
 }
- 
+
+/* Other styles specific to the puzzle page */
 h1, h2 {
   font-weight: 700;
   letter-spacing: 1px;
@@ -22,6 +23,7 @@ h1, h2 {
   height: auto;
 }
 
+/* Password input and other styles */
 #password-input-container {
   margin-top: 20px;
 }
@@ -52,11 +54,4 @@ img {
   height: auto;
   display: block;
   margin: 20px auto;
-}
-
-#instruction-message {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 20px;
 }
