@@ -1,41 +1,31 @@
 body {
   font-family: 'Orbitron', sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   background-color: #121212;
-  color: #ffffff;
-}
-
-h1 {
-  font-size: 24px;
-  font-weight: 700;
+  color: #fff;
   text-align: center;
 }
 
 #puzzle-container {
   display: grid;
-  grid-template-columns: repeat(4, 100px); /* 4x4 grid (adjust size as needed) */
-  grid-template-rows: repeat(4, 100px);
+  grid-template-columns: repeat(3, 100px); /* Change this to control the number of pieces */
+  grid-template-rows: repeat(3, 100px);
   gap: 5px;
   justify-content: center;
   margin-top: 20px;
 }
 
-.puzzle-piece {
+.piece {
   width: 100px;
   height: 100px;
-  background-color: #333;
-  background-size: cover;
+  background-color: #ccc;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  border: 2px solid #ccc;
 }
 
-#error-message {
-  color: red;
-  font-weight: bold;
+#result-container {
+  margin-top: 20px;
+  display: none;
 }
