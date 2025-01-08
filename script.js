@@ -4,11 +4,18 @@ function verifyPassword() {
   const errorMessage = document.getElementById('error-message');
   const sidebar = document.getElementById('sidebar');
   const hamburger = document.getElementById('hamburger');
+  const instructionMessage = document.getElementById('instruction-message');
 
   if (input === correctPassword) {
     document.getElementById('lockscreen').style.display = 'none'; // Hide the lock screen
-    sidebar.classList.add('visible'); // Make the sidebar visible
-    hamburger.style.display = 'none'; // Hide the hamburger icon after the sidebar appears
+    sidebar.classList.add('visible'); // Show the sidebar
+    hamburger.style.display = 'none'; // Hide the hamburger icon
+    instructionMessage.style.display = 'block'; // Show the instruction message
+
+    // Optionally, highlight the first date link in the sidebar
+    const firstDateLink = sidebar.querySelector('a'); // Assuming the first link is the first <a> tag
+    firstDateLink.style.backgroundColor = '#4CAF50'; // Change background color to highlight
+    firstDateLink.style.color = 'white'; // Make text color white for contrast
   } else {
     errorMessage.textContent = 'Incorrect password. Please try again.';
     errorMessage.style.color = 'red';
