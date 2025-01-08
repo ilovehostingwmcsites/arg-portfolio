@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Scramble Puzzle</title>
+  <link rel="stylesheet" href="puzzles.css">
+</head>
+<body>
 
+  <h1>Word Scramble Puzzle</h1>
+  <p>Solve the scrambled word:</p>
+
+  <div id="scramble-container">
+    <p id="scrambled-word">GEISNLTWR</p>
+    <input type="text" id="scrambled-answer" placeholder="Enter your answer">
+    <button onclick="checkScrambledAnswer()">Submit Answer</button>
+    
+    <div id="error-message"></div>
+  </div>
+
+  <div id="next-clue" style="display:none;">
+    <h2>Well done! You've solved the puzzle!</h2>
+    <img src="WMCPortfolio1.png" alt="Portfolio 1">
+  </div>
+
+  <script src="scramble-puzzle.js"></script>
+</body>
+</html>
