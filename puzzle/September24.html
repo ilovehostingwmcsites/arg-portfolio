@@ -3,22 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Second Puzzle</title>
+  <title>A Little Riddle :3</title>
   <link rel="stylesheet" href="puzzles2.css">
 </head>
 <body>
 
-  <h1>Jigsaw Puzzle Challenge</h1>
-  <p>Drag the pieces to solve the puzzle!</p>
+  <h1>Riddle Challenge</h1>
+  <p>Solve the riddle to proceed:</p>
 
-  <div id="puzzle-container">
-    <!-- Puzzle pieces will go here -->
+  <div id="riddle-container">
+    <p id="riddle">What is always coming, but never arrives?</p>
+    
+    <input type="text" id="riddle-answer" placeholder="Enter your answer">
+    <button onclick="checkRiddleAnswer()">Submit Answer</button>
+    
+    <div id="error-message"></div>
   </div>
 
-  <div id="result-container" style="display:none;">
-    <h2>Well done! You've solved the puzzle!</h2>
+  <div id="next-clue" style="display:none;">
+    <h2>Well done! You've solved the riddle!</h2>
     <img src="WMCPortfolio1.png" alt="Portfolio 1">
-    <img src="WMCPortfolio2.png" alt="Portfolio 2">
   </div>
 
   <script src="returnofscript2.js"></script>
