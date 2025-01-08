@@ -5,9 +5,9 @@ let isSolved = false;
 function createPuzzle() {
   const puzzleContainer = document.getElementById('puzzle-container');
   const pieces = [
-    'piece1.png', 'piece2.png', 'piece3.png', 'piece4.png',
-    'piece5.png', 'piece6.png', 'piece7.png', 'piece8.png',
-    'piece9.png',
+    'piece1.png', 'piece2.png', 
+    'piece3.png', 'piece4.png',
+    'piece5.png', 'piece6.png',
   ]; // Change these to the actual image filenames
   
   // Shuffle pieces
