@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLASSIFIED WMC FINAL 2025</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="lockscreen">
+    <h1>WELCOME TO {CLASSIFIED_WMC_FINAL_2025}</h1>
+    <img src="lock.png" alt="Lock Icon" id="lock-image">
+    <h2>PLEASE VERIFY YOUR IDENTITY.</h2>
+    <input 
+      type="text" 
+      id="password" 
+      placeholder="Check your guidebook!" 
+    />
+    <button onclick="verifyPassword()">Submit</button>
+    <p id="error-message"></p>
+  </div>
 
+  <div id="sidebar" class="hidden">
+    <button onclick="toggleMenu()">☰</button>
+    <ul>
+      <li><a href="puzzles/September24.html">September-2024</a></li>
+      <li><a href="puzzles/OctoberAndNovember24.html">October&November-2024</a></li>
+      <li><a href="puzzles/DecemberAndJanuary245.html">December&January-2024-5</a></li>
+      <li><a href="puzzles/Final.html">Final-Thoughts.</a></li>
+      <!-- Add more links as needed -->
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
