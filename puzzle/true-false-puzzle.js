@@ -12,3 +12,6 @@ function checkAnswer(isTrue) {
     errorMessage.textContent = 'Incorrect answer. Please try again.';
   }
 }
+function goBackToHome() {
+  window.location.href = 'https://ilovehostingwmcsites.github.io/arg-portfolio/';  // Redirect to your homepage
+}
