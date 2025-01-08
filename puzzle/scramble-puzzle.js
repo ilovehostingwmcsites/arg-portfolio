@@ -4,11 +4,8 @@ function checkScrambledAnswer() {
   const errorMessage = document.getElementById('error-message');
 
   if (userAnswer === correctAnswer) {
-    document.body.innerHTML = `
-      <h1>Skillfully done. Here's your next piece.</h1>
-      <img src="WMCPortfolio1.png" alt="Portfolio 1">
-      <button onclick="goBackToHome()">Back to Home</button>
-    `;
+    document.getElementById('scramble-container').style.display = 'none';
+    document.getElementById('next-clue').style.display = 'block';
   } else {
     errorMessage.textContent = 'Incorrect answer. Please try again.';
   }
