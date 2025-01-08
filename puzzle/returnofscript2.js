@@ -6,9 +6,11 @@ function checkRiddleAnswer() {
   // Check if the answer is correct
   if (userAnswer === correctAnswer) {
     // Display the next clue (portfolio images)
-    document.getElementById('riddle-container').style.display = 'none';
-    document.getElementById('next-clue').style.display = 'block';
-     <button onclick="goBackToHome()">Back to Home</button>
+    document.body.innerHTML = `
+      <h1>Well done! You've solved the puzzle.</h1>
+      <img src="WMCPortfolio1.png" alt="Portfolio 1">
+      <button onclick="goBackToHome()">Back to Home</button>
+    `;
   } else {
     // Show error message
     errorMessage.textContent = 'Incorrect answer. Please try again.';
