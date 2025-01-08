@@ -86,3 +86,12 @@ button:hover {
   color: #fff;
   text-decoration: none;
 }
+
+#sidebar a {
+  padding: 5px 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#sidebar a:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}
