@@ -3,54 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome</title>
-  <link rel="stylesheet" href="style.css">
+  <title>First Puzzle</title>
+  <link rel="stylesheet" href="puzzles.css">
 </head>
 <body>
 
-  <h1>WELCOME TO {CLASSIFIED_WMC_FINAL_2025}</h1>
-  <img src="lock.png" alt="Lock Image" id="lock-image">
-  <h2>PLEASE VERIFY YOUR IDENTITY.</h2>
+  <h1>With the Right Click, you can Open In New perspectives through a simple Link!</h1>
 
-  <div id="password-section">
-    <input type="text" id="password" placeholder="Check your guidebook!">
+  <!-- Image with the password hint in its name -->
+  <img src="goodjob[DqgLwEhjlqv].png" alt="Good Job!" id="puzzle-image">
+  
+  <!-- Input field for the password -->
+  <div id="password-input-container">
+    <label for="password">Enter the Password:</label>
+    <input type="text" id="password" placeholder="Enter password">
     <button onclick="checkPassword()">Submit</button>
     <div id="error-message"></div>
   </div>
-
-  <!-- Hidden by default, this will appear once the user has completed the first puzzle -->
-  <div id="second-puzzle-link" style="display:none;">
-    <p>You've completed the first puzzle! Go ahead and try the <a href="puzzle2.html">Second Puzzle</a>.</p>
-  </div>
-
-  <script>
-    function checkPassword() {
-      const input = document.getElementById('password').value;
-      const correctPassword = 'password'; // Replace this with actual password
-
-      const errorMessage = document.getElementById('error-message');
-
-      // Check if the entered password is correct
-      if (input === correctPassword) {
-        // Show the sidebar link for the second puzzle
-        localStorage.setItem('firstPuzzleCompleted', 'true');
-        document.getElementById('second-puzzle-link').style.display = 'block';  // Show second puzzle link
-        // Hide the password section
-        document.getElementById('password-section').style.display = 'none';
-      } else {
-        // Show error message
-        errorMessage.textContent = 'Incorrect password. Please try again.';
-        errorMessage.style.color = 'red';
-      }
-    }
-
-    // Check if the first puzzle has been completed
-    window.onload = function() {
-      if (localStorage.getItem('firstPuzzleCompleted') === 'true') {
-        document.getElementById('second-puzzle-link').style.display = 'block';  // Show second puzzle link
-      }
-    }
-  </script>
-
+  
+  <!-- Script to handle password verification -->
+  <script src="returnofscript.js"></script>
 </body>
 </html>
