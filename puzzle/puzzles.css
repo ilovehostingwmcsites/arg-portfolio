@@ -1,0 +1,43 @@
+/* Include Orbitron font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif; /* Apply Orbitron font to the entire body */
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+#puzzle-image {
+  margin-top: 20px;
+  max-width: 80%;
+  height: auto;
+}
+
+#password-input-container {
+  margin-top: 20px;
+}
+
+#password-input-container input {
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+  width: 200px;
+}
+
+#password-input-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+img {
+  margin-top: 20px;
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
