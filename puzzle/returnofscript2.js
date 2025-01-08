@@ -1,87 +1,77 @@
-let puzzlePieces = [];
-let correctPositions = [];
-let isSolved = false;
-
+// Function to create puzzle pieces from the image
 function createPuzzle() {
   const puzzleContainer = document.getElementById('puzzle-container');
-  const pieces = [
-    'piece1.png', 'piece2.png', 
-    'piece3.png', 'piece4.png',
-    'piece5.png', 'piece6.png',
-  ]; // Change these to the actual image filenames
+  const puzzleImage = new Image();
+  puzzleImage.src = 'intro-letter.jpg'; // Replace with the image you want to use for the puzzle
+  puzzleImage.onload = () => {
+    const pieces = [];
+    const rows = 3;  // Number of rows in the grid
+    const cols = 3;  // Number of columns in the grid
+
+    // Split the image into puzzle pieces
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < cols; j++) {
+        const piece = document.createElement('div');
+        piece.classList.add('piece');
+        piece.style.backgroundImage = `url(${puzzleImage.src})`;
+        piece.style.backgroundPosition = `-${j * 100}px -${i * 100}px`;
+        piece.setAttribute('data-position', `${i}-${j}`);
+        piece.setAttribute('draggable', true);
+        piece.addEventListener('dragstart', dragStart);
+        piece.addEventListener('dragover', dragOver);
+        piece.addEventListener('drop', dropPiece);
+        pieces.push(piece);
+      }
+    }
+
+    // Shuffle pieces
+    pieces.sort(() => Math.random() - 0.5);
+    pieces.forEach(piece => puzzleContainer.appendChild(piece));
+  };
+}
+
+// Drag start function
+function dragStart(e) {
+  e.dataTransfer.setData('text', e.target.getAttribute('data-position'));
+}
+
+// Allow dropping on puzzle container
+function dragOver(e) {
+  e.preventDefault();
+}
+
+// Drop the piece in the correct position
+function dropPiece(e) {
+  e.preventDefault();
+  const targetPosition = e.target.getAttribute('data-position');
+  const draggedPosition = e.dataTransfer.getData('text');
+  const target = e.target;
+  const draggedPiece = document.querySelector(`.piece[data-position='${draggedPosition}']`);
   
-  // Shuffle pieces
-  pieces.sort(() => Math.random() - 0.5);
+  if (targetPosition === draggedPosition) {
+    target.appendChild(draggedPiece);
+    checkPuzzleCompletion();
+  }
+}
 
-  // Create the puzzle pieces
-  pieces.forEach((piece, index) => {
-    const div = document.createElement('div');
-    div.classList.add('puzzle-piece');
-    div.setAttribute('draggable', true);
-    div.setAttribute('data-id', index);
-    div.style.backgroundImage = `url('intro-letter.png')`;
-    div.style.backgroundPosition = `${(index % 4) * -100}px ${(Math.floor(index / 4)) * -100}px`; // Adjust according to the image grid
-    div.addEventListener('dragstart', onDragStart);
-    div.addEventListener('dragover', onDragOver);
-    div.addEventListener('drop', onDrop);
-    puzzleContainer.appendChild(div);
-    puzzlePieces.push(div);
-    correctPositions.push(index);
+// Check if the puzzle is solved
+function checkPuzzleCompletion() {
+  const pieces = document.querySelectorAll('.piece');
+  let solved = true;
+
+  pieces.forEach(piece => {
+    const targetPosition = piece.getAttribute('data-position');
+    const piecePosition = piece.style.backgroundPosition.split(' ');
+
+    if (piecePosition[0] !== `-${targetPosition.split('-')[1] * 100}px` || piecePosition[1] !== `-${targetPosition.split('-')[0] * 100}px`) {
+      solved = false;
+    }
   });
-}
 
-function onDragStart(event) {
-  event.dataTransfer.setData('text/plain', event.target.dataset.id);
-}
-
-function onDragOver(event) {
-  event.preventDefault();
-}
-
-function onDrop(event) {
-  event.preventDefault();
-  const draggedPieceId = event.dataTransfer.getData('text/plain');
-  const droppedPiece = event.target;
-
-  if (draggedPieceId !== droppedPiece.dataset.id) {
-    const draggedPiece = puzzlePieces[draggedPieceId];
-    const droppedPieceId = droppedPiece.dataset.id;
-
-    // Swap the positions of the dragged and dropped pieces
-    const temp = puzzlePieces[draggedPieceId];
-    puzzlePieces[draggedPieceId] = puzzlePieces[droppedPieceId];
-    puzzlePieces[droppedPieceId] = temp;
-
-    // Reposition the pieces on the grid
-    updateGrid();
-  }
-  checkPuzzleSolved();
-}
-
-function updateGrid() {
-  puzzlePieces.forEach((piece, index) => {
-    const column = index % 4;
-    const row = Math.floor(index / 4);
-    piece.style.gridRow = row + 1;
-    piece.style.gridColumn = column + 1;
-  });
-}
-
-function checkPuzzleSolved() {
-  const currentPositions = puzzlePieces.map(piece => parseInt(piece.dataset.id));
-  if (JSON.stringify(currentPositions) === JSON.stringify(correctPositions)) {
-    isSolved = true;
-    showNextImage();
+  if (solved) {
+    document.getElementById('result-container').style.display = 'block'; // Show the next images
   }
 }
 
-function showNextImage() {
-  if (isSolved) {
-    document.body.innerHTML = `
-      <h1>Congratulations, you completed the puzzle!</h1>
-      <img src="WMCPortfolio3.png" alt="Next Portfolio Image">
-    `;
-  }
-}
-
+// Call the function to create the puzzle
 createPuzzle();
