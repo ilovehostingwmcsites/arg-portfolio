@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>True or False Puzzle</title>
+  <link rel="stylesheet" href="puzzles.css">
+</head>
+<body>
 
+  <h1>True or False Quiz</h1>
+  <p>Answer the following question:</p>
+
+  <div id="true-false-container">
+    <p id="statement">Might be a bit unfair if you don't know your history, thankfully you have a guidebook. True or False: Vince McMahon is currently in charge of the WWE.</p>
+    <button onclick="checkAnswer(true)">True</button>
+    <button onclick="checkAnswer(false)">False</button>
+    
+    <div id="error-message"></div>
+  </div>
+
+  <div id="next-clue" style="display:none;">
+    <h2>woah...almost like you had a guide!</h2>
+    <img src="WMCPortfolio1.png" alt="Portfolio 1">
+  </div>
+
+  <script src="true-false-puzzle.js"></script>
+</body>
+</html>
