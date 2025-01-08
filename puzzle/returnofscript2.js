@@ -8,6 +8,7 @@ function checkRiddleAnswer() {
     // Display the next clue (portfolio images)
     document.getElementById('riddle-container').style.display = 'none';
     document.getElementById('next-clue').style.display = 'block';
+     <button onclick="goBackToHome()">Back to Home</button>
   } else {
     // Show error message
     errorMessage.textContent = 'Incorrect answer. Please try again.';
