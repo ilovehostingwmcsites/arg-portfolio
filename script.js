@@ -37,21 +37,27 @@ function toggleMenu() {
 
 function checkPassword() {
   const input = document.getElementById('password').value;
-  const correctPassword = 'password'; // MAKE IT REAAAALLLLL LAAATERRRRRR
+  const correctPassword = 'password'; // Replace this with the actual password
 
   const errorMessage = document.getElementById('error-message');
 
-  // is the july2022 password real?
+  // Check if the entered password is correct
   if (input === correctPassword) {
-    // wmc port 
+    // Clear the current content and add the success content
     document.body.innerHTML = `
       <h1>Well done! You've solved the puzzle.</h1>
       <img src="WMCPortfolio1.png" alt="Portfolio 1">
       <img src="WMCPortfolio2.png" alt="Portfolio 2">
+      <button onclick="goBackToHome()">Back to Home</button>
     `;
   } else {
     // Show error message
     errorMessage.textContent = 'Incorrect password. Please try again.';
     errorMessage.style.color = 'red';
   }
+}
+
+function goBackToHome() {
+  alert("Going back to home...");  // This is just for debugging
+  window.location.href = 'index.html';  // Redirect to the homepage
 }
