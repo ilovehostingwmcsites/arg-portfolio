@@ -10,6 +10,21 @@
 
   <h1>Word Scramble Puzzle</h1>
   <p>Solve the scrambled word:</p>
+  <script>
+  function checkScrambledAnswer() {
+    const userAnswer = document.getElementById('scrambled-answer').value.trim().toLowerCase();
+    const correctAnswer = 'wrestling'; // The correct answer to the scrambled word
+    const errorMessage = document.getElementById('error-message');
+
+    if (userAnswer === correctAnswer) {
+      document.getElementById('scramble-container').style.display = 'none';
+      document.getElementById('next-clue').style.display = 'block';
+    } else {
+      errorMessage.textContent = 'Incorrect answer. Please try again.';
+      errorMessage.style.color = 'red';
+    }
+  }
+</script>
 
   <div id="scramble-container">
     <p id="scrambled-word">geisnltwr</p>
