@@ -12,11 +12,15 @@ body {
 }
 
 #lockscreen {
-  text-align: center;
+  display: flex; /* Ensure flexbox is applied */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Horizontally center the content */
+  justify-content: center; /* Vertically center the content */
+  width: 100%; /* Ensure the lockscreen takes full width */
 }
 
 h1, h2 {
-  font-weight: 700; /* Bold for headings */
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
@@ -55,22 +59,22 @@ button:hover {
   background-color: #333;
   padding: 10px;
   overflow-y: auto;
-  visibility: hidden; /* Sidebar is hidden by default */
-  opacity: 0; /* Sidebar is transparent initially */
-  transition: visibility 0s, opacity 0.3s linear; /* Smooth transition */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s linear;
 }
 
 #sidebar.visible {
-  visibility: visible; /* Sidebar becomes visible */
-  opacity: 1; /* Sidebar becomes opaque */
+  visibility: visible;
+  opacity: 1;
 }
 
 #hamburger {
-  display: block; /* Default to visible */
+  display: block;
 }
 
 #sidebar.visible + #hamburger {
-  display: none; /* Hide hamburger when sidebar is visible */
+  display: none;
 }
 
 #sidebar ul {
@@ -93,12 +97,12 @@ button:hover {
 }
 
 #sidebar a:hover {
-  background-color: #45a049; /* Slightly darker green on hover */
+  background-color: #45a049;
 }
 
 #instruction-message {
-  font-size: 18px; 
-  font-weight: bold; /*Make the text bold for emphasis */
-  text-align: center; 
-  margin-top: 20px; 
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
 }
