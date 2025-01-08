@@ -55,11 +55,24 @@ button:hover {
   background-color: #333;
   padding: 10px;
   overflow-y: auto;
+  visibility: hidden; /* Sidebar is hidden by default */
+  opacity: 0; /* Sidebar is transparent initially */
+  transition: visibility 0s, opacity 0.3s linear; /* Smooth transition */
 }
 
-#sidebar.hidden {
-  display: none;
+#sidebar.visible {
+  visibility: visible; /* Sidebar becomes visible */
+  opacity: 1; /* Sidebar becomes opaque */
 }
+
+#hamburger {
+  display: block; /* Default to visible */
+}
+
+#sidebar.visible + #hamburger {
+  display: none; /* Hide hamburger when sidebar is visible */
+}
+
 #sidebar ul {
   list-style: none;
   padding: 0;
