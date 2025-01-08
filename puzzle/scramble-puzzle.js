@@ -1,6 +1,6 @@
 function checkScrambledAnswer() {
   const userAnswer = document.getElementById('scrambled-answer').value.trim().toLowerCase();
-  const correctAnswer = 'WRESTLING'; // The correct answer to the scrambled word
+  const correctAnswer = 'wrestling'; // The correct answer to the scrambled word
   const errorMessage = document.getElementById('error-message');
 
   if (userAnswer === correctAnswer) {
