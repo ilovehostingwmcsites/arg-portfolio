@@ -95,3 +95,10 @@ button:hover {
 #sidebar a:hover {
   background-color: #45a049; /* Slightly darker green on hover */
 }
+
+#instruction-message {
+  font-size: 18px; 
+  font-weight: bold; /*Make the text bold for emphasis */
+  text-align: center; 
+  margin-top: 20px; 
+}
