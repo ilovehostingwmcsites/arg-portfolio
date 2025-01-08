@@ -3,25 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>First Puzzle</title>
-  <link rel="stylesheet" href="puzzles.css">
+  <title>CLASSIFIED WMC FINAL 2025</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <h1>With the Right Click, you can Open In New perspectives through a simple Link!</h1>
-
-  <!-- Image with the password hint in its name -->
-  <img src="goodjob[DqgLwEhjlqv].png" alt="Good Job!" id="puzzle-image">
-  
-  <!-- Input field for the password -->
-  <div id="password-input-container">
-    <label for="password">Enter the Password:</label>
-    <input type="text" id="password" placeholder="Enter password">
-    <button onclick="checkPassword()">Submit</button>
-    <div id="error-message"></div>
+  <div id="lockscreen">
+    <h1>WELCOME TO {CLASSIFIED_WMC_FINAL_2025}</h1>
+    <img src="lock.png" alt="Lock Icon" id="lock-image">
+    <h2>PLEASE VERIFY YOUR IDENTITY.</h2>
+    <input 
+      type="text" 
+      id="password" 
+      placeholder="Check your guidebook!" 
+    />
+    <button onclick="verifyPassword()">Submit</button>
+    <p id="error-message"></p>
   </div>
-  
-  <!-- Script to handle password verification -->
-  <script src="returnofscript.js"></script>
+
+  <div id="sidebar" class="hidden">
+    <button id="hamburger" onclick="toggleMenu()">☰</button>
+    <ul>
+      <li><a href="puzzle/July22.html">Where it all started. July 2022.</a></li>
+      <li><a href="puzzle/September24.html">September 2024</a></li>
+      <li><a href="puzzle/OctoberAndNovember24.html">October and November of 2024</a></li>
+      <li><a href="puzzle/DecemberAndJanuary245.html">December and January of 2024 and 2025</a></li>
+      <li><a href="puzzle/Final.html">Final Thoughts.</a></li>
+      <!-- Add more links as needed -->
+    </ul>
+  </div>
+<!-- Message that will show after password is entered -->
+<div id="instruction-message" style="display: none;">
+  <p>Please click on the first date in the sidebar to begin.</p>
+</div>
+
+  <script src="script.js"></script>
 </body>
 </html>
