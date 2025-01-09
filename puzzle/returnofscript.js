@@ -1,6 +1,6 @@
 function checkPassword() {
   const input = document.getElementById('password').value;
-  const correctPassword = 'AndItBegins'; // Replace with actual password
+  const correctPassword = 'AndItEnds'; // Replace with actual password
 
   const errorMessage = document.getElementById('error-message');
 
