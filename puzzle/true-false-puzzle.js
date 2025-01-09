@@ -5,7 +5,7 @@ function checkAnswer(isTrue) {
   if (isTrue === correctAnswer) {
     document.body.innerHTML = `
       <h1>Great job on making it this far!</h1>
-      <img src="WMCPortfolio1.png" alt="Portfolio 1">
+      <img src="WMCPortfolio4.png" alt="Portfolio 4">
       <button onclick="goBackToHome()">Back to Home</button>
     `;
   } else {
