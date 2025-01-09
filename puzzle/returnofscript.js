@@ -12,8 +12,7 @@ function checkPassword() {
     // Show the portfolio images and the back to home button
     document.body.innerHTML = `
       <h1>Well done! You've solved the puzzle.</h1>
-      <img src="WMCPortfolio1.png" alt="Portfolio 1">
-      <img src="WMCPortfolio2.png" alt="Portfolio 2">
+      <img src="WMCPortfolio5.png" alt="Portfolio 5">
       <button onclick="goBackToHome()">Back to Home</button>
     `;
   } else {
